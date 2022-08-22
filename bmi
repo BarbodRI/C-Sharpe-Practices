@@ -1,0 +1,27 @@
+console.WriteLine("Enter your age and press enter");
+var age = Convert.ToInt32(console.ReadLine());
+if (age < 18 & age > 100) {
+    console.WriteLine("Sorry your age dosent include in bmi!!");
+}
+else if (age < 100) {
+    console.WriteLine("Enter your weight and press enter");
+}
+var weight = Convert.ToInt32(console.ReadLine());
+console.WriteLine("Enter your hight and press enter");
+var hight = Convert.ToInt32(console.ReadLine());
+var result = ((weight) / (hight * hight) * (10000));
+console.WriteLine("Your bmi is :" + result);
+if (result <= 18.4);
+{
+    console.WriteLine("You are underweight!!");
+}
+if (result >= 18.5 & result <= 24.9) 
+{
+    console.WriteLine("You are normal:)");
+}
+else if (result >= 25 & result <= 39.9) {
+    console.WriteLine("You are overweight");
+}
+else if (result >= 40) {
+    console.WriteLine("You are obese:(");
+}
