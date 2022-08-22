@@ -1,0 +1,38 @@
+ Random random = new Random();
+        bool playAgain = true;
+        int min = 1;
+        int max = 100;
+        do
+        {
+            int guess = 0;
+            int round = 0;
+            int number = random.Next(min, max + 1);
+            while (guess != number)
+            {
+                Console.WriteLine("Guess number between" + min + "-" + max + " :");
+                guess = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Guess" + guess);
+
+                if (guess > number)
+                {
+                    Console.WriteLine(guess + "is too High!!");
+                }
+                else if (guess < number)
+                {
+                    Console.WriteLine(guess + "is too low!!");
+                }
+
+                round++;
+            }
+            Console.Clear();
+            Console.WriteLine("Number :" + number);
+            Console.WriteLine("You Win!!");
+            Console.WriteLine("Round :" + round);
+            Console.WriteLine("Would you like to play again (y/n)?");
+            var response = Console.ReadLine();
+            playAgain = response.ToUpper() == "y";
+
+        } while (playAgain);
+
+        Console.WriteLine("Thank You for watching ^_^ ");
+    
