@@ -1,0 +1,13 @@
+console.WriteLine("Enter side and press enter");
+
+int side = convert.ToInt32(console.ReadLine());
+double result = Math.Pow(side,2);
+
+
+console.writeLine("Enter side2 and press enter");
+
+int side2 = convert.ToInt32(console.ReadLine());
+double result2 = Math.Pow(side2,2);
+double r = convert.ToDouble(result)+result2;
+double result3 = Math.Sqrt(r);
+console.WriteLine("Your result is :"+result3);
