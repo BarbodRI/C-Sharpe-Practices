@@ -1,0 +1,12 @@
+int channel = 0;
+bool isLoved = false;
+do
+{
+console.clear();
+console.WriteLine($"channnel{channel++}")
+console.WriteLine("Do you love this chanel?(y/n)")
+var answer = console.ReadLine();
+isLoved = answer == "y";
+} while (!isLoved);
+console.WriteLine($"You are enjoy CHANNEL{channel}")
+console.WriteLine("^_^");
