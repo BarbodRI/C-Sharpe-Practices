@@ -1,0 +1,87 @@
+using System;
+
+namespace Dast_nazan
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            static void Invaildcommand()
+            {
+                Console.WriteLine("Invalid command ");
+                Console.WriteLine("Use --helps switch to show help");
+            }
+            static void Version()
+            {
+                Console.WriteLine("6.0.4");
+            }
+            static void Helps()
+            {
+                Console.WriteLine("Use this switch to run program : --Weight/Your weight(cm)/--Hight/Your hight(kg)");
+            }
+            static void bmi(double weight, double height)
+            {
+
+                var bmi = ((weight) / (height * height) * (10000));
+                Console.WriteLine($"Your BMI is :{bmi}");
+                if (bmi <= 18.4)
+                {
+                    Console.WriteLine("You are underweight!!");
+                }
+                if (bmi >= 18.5 & bmi <= 24.9)
+                {
+                    Console.WriteLine("You are normal:)");
+                }
+                else if (bmi >= 25 & bmi <= 39.9)
+                {
+                    Console.WriteLine("You are overweight");
+                }
+                else if (bmi >= 40)
+                {
+                    Console.WriteLine("You are obese:(");
+                }
+            }
+            if (args.Length == 0)
+            {
+                Invaildcommand();
+            }
+            if (args[0] == "bmi")
+            {
+                if (args[1] == "--helps")
+                {
+                    Helps();
+                }
+                else if (args[1] == "--version")
+                {
+                    Version();
+                }
+                else if (args[1] == "--height" && args[3] == "--weight")
+                {
+                    var height = Convert.ToDouble(args[2]);
+                    var weight = Convert.ToDouble(args[4]);
+                    bmi(weight, height);
+                }
+                else if (args[1] == "--weight" && args[3] == "--height")
+                {
+                    var height = Convert.ToDouble(args[4]);
+                    var weight = Convert.ToDouble(args[2]);
+                    bmi(weight, height);
+                }
+                else if (args[1] != "weight" || args[1] != "height" || args[3] != "weight" || args[3] != "hight")
+                {
+                    Invaildcommand();
+                }
+                else
+                {
+                    Invaildcommand();
+                }
+            }
+            else
+            {
+                Invaildcommand();
+            }
+        }
+
+    }
+}
