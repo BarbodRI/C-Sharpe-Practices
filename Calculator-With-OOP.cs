@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 namespace Dast_nazan
 {
-    public class a
+     class Program
     {
         static void Main(string[] args)
         {
